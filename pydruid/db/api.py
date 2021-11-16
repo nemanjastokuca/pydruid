@@ -167,14 +167,14 @@ class Connection(object):
         """Return a new Cursor Object using the connection."""
 
         cursor = Cursor(
-            self.url,
-            self.user,
-            self.password,
-            self.context,
-            self.header,
-            self.ssl_verify_cert,
-            self.ssl_client_cert,
-            self.proxies,
+            url=self.url,
+            user=self.user,
+            password=self.password,
+            context=self.context,
+            header=self.header,
+            ssl_verify_cert=self.ssl_verify_cert,
+            ssl_client_cert=self.ssl_client_cert,
+            proxies=self.proxies,
         )
 
         self.cursors.append(cursor)
@@ -204,8 +204,8 @@ class Cursor(object):
         context=None,
         header=False,
         ssl_verify_cert=True,
-        proxies=None,
         ssl_client_cert=None,
+        proxies=None,
     ):
         self.url = url
         self.context = context or {}
